@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pays",
+  "info": {
+    "name": "Platby -",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "sale_from": {
+      "type": "biginteger"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "online",
+        "dobirka"
+      ]
+    },
+    "deliveries": {
+      "via": "pays",
+      "collection": "dopravy"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "cz",
+        "sk"
+      ],
+      "default": "cz",
+      "required": true
+    }
+  }
+}
